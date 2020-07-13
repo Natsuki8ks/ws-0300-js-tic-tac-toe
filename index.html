@@ -3,37 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <title>Tic Tac Toe</title>
-  <link href="stylesheets/sass/index.sass" rel="stylesheet" type="text/css" media="all" />
+  <link href="stylesheets/index.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
   <div class="l-container">
     <!-- write your html -->
-    <div class="main">
-      <p>TIC TAC TOE</p>
+    <div class="l-main main">
+      <h1>TIC TAC TOE</h1>
       <div class="mark">
-        <div class="round">〇</div>
-        <div class="cross">✖</div>
+        <div class="turn-item circle">〇</div>
+        <div class="turn-item cross">✖</div>
       </div>
       <table class="board">
-        <tr>
-          <td id="1">o</td>
-          <td id="2">o</td>
-          <td id="3">o</td>
-        </tr>
-        <tr>
-          <td id="4">o</td>
-          <td id="5">o</td>
-          <td id="6">o</td>
-        </tr>
-        <tr>
-          <td id="7">o</td>
-          <td id="8">o</td>
-          <td id="9">o</td>
-        </tr>
+        <tbody>
+          <tr class="row">
+            <td class="js-cell" data-key="1"></td>
+            <td class="js-cell" data-key="2"></td>
+            <td class="js-cell" data-key="3"></td>
+          </tr>
+          <tr class="row">  
+            <td class="js-cell" data-key="4"></td>
+            <td class="js-cell" data-key="5"></td>
+            <td class="js-cell" data-key="6"></td>
+          </tr>
+          <tr class="row">
+            <td class="js-cell" data-key="7"></td>
+            <td class="js-cell" data-key="8"></td>
+            <td class="js-cell" data-key="9"></td>
+          </tr>
+       </tbody>
       </table>
-      <div class="timeline-starting">starting...
+      <div class="timeline-starting js-state-message">starting...
       </div>
-      <a class="btn">Restart</a>
+      <a class="btn js-restart">Restart</a>
     </div>
   </div>
   <script type="text/javascript" src="js/function.js"></script>

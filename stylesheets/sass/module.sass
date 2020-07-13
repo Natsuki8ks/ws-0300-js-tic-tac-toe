@@ -1,18 +1,41 @@
+h1 
+  font-size: 20px
+  text-align: center
+
 .mark
   display: flex
-  
+  justify-content: center
+  margin: 30px auto
 
-tbody
+.circle, .cross
+  width: 80px
+  height: 40px
+  text-align: center
+  // border-bottom: 4px solid #000
+
+
+table
   width: 150px
   height: 150px
-  border: 2px solid #000
-
-
-.board 
   background: #000
+  margin: 20px auto
+
+tbody
+  background: #ffffff
+
+td
+  cursor: pointer
+
+.timeline-starting
+  padding: 10px
+
 
 .btn
-  border: 2px solid #ffffff
+  display: inline-block
+  width: 100%
+  border: 2px solid #000
   border-radius: 4px
+  cursor: pointer
   &:hover
-    background: #ffffff
+    background: #000
+    color: #fff
