@@ -10,11 +10,11 @@
     <!-- write your html -->
     <div class="l-main main">
       <h1>TIC TAC TOE</h1>
-      <div class="mark">
+      <div class="turn">
         <div class="turn-item circle">〇</div>
-        <div class="turn-item cross">✖</div>
+        <div class="turn-item cross">×</div>
       </div>
-      <table class="board">
+      <table class="table  js-table">
         <tbody>
           <tr class="row">
             <td class="js-cell" data-key="1"></td>
@@ -33,7 +33,8 @@
           </tr>
        </tbody>
       </table>
-      <div class="timeline-starting js-state-message">starting...
+      
+      <div class="state-message js-state-message">starting...
       </div>
       <a class="btn js-restart">Restart</a>
     </div>

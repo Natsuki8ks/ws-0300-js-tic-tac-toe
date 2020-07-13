@@ -29,7 +29,7 @@ const CHARACTERS = {
 function toggleTurn({isCircleTurn, circleElement, crossElement}){
   if (isCircleTurn){
     circleElement.classList.remove(ACTIVE_CLASSNAME)
-    crossElement.classList.ass(ACTIVE_CLASSNAME)
+    crossElement.classList.add(ACTIVE_CLASSNAME)
   }else {
     circleElement.classList.add(ACTIVE_CLASSNAME)
     crossElement.classList.remove(ACTIVE_CLASSNAME)
@@ -50,7 +50,7 @@ function checkRow({cells}, value, index){
 // ox vertical
 function chackCol({cells}, value, index){
   let cursor = index
-  for (let i = 0; i < 3;i++){
+  for (let i = 0; i < 3; i++){
     if(cells[cursor] !== value){
       return false
     }
@@ -65,7 +65,7 @@ function checkDiagonal({cells}, value, index){
   }
   return[0, 4, 8].every(item => cells[item] === value) || [2, 4, 6].every(item => cells[item] === value)
 }
-// ox win
+// ox win 
 function checkWInner(context, value, index){
   return [checkRow, checkCol, checkDiagonal].some(cb => cb(context, value, index))
 }
