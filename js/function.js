@@ -6,10 +6,10 @@ const context = {
   progress: true,
   cells: new Array(9),
   cellElements: document.querySelectorAll('.js-cell'),
-  circleElement: document.querySelector('circle'),
-  crossElement: document.querySelector('cross'),
-  stateMessageElement: document.querySelector('js-state-message'),
-  restartButtonElement: document.querySelector('js-restart'),
+  circleElement: document.querySelector('.circle'),
+  crossElement: document.querySelector('.cross'),
+  stateMessageElement: document.querySelector('.js-state-message'),
+  restartButtonElement: document.querySelector('.js-restart'),
 }
 
 const STATUSES = {
@@ -48,7 +48,7 @@ function checkRow({cells}, value, index){
   return true
 }
 // ox vertical
-function chackCol({cells}, value, index){
+function checkCol({cells}, value, index){
   let cursor = index
   for (let i = 0; i < 3; i++){
     if(cells[cursor] !== value){
@@ -61,12 +61,12 @@ function chackCol({cells}, value, index){
 // ox diagonal
 function checkDiagonal({cells}, value, index){
   if(![0, 2, 4, 6, 8].includes(index)){
-    return faulse
+    return false
   }
   return[0, 4, 8].every(item => cells[item] === value) || [2, 4, 6].every(item => cells[item] === value)
 }
 // ox win 
-function checkWInner(context, value, index){
+function checkWinner(context, value, index){
   return [checkRow, checkCol, checkDiagonal].some(cb => cb(context, value, index))
 }
 
@@ -87,6 +87,7 @@ function onClickCell(e) {
   if (checkWinner(context, value, index)){
     context.progress = false
     const message = isCircleTurn ? STATUSES.win.replace('%name%', CHARACTERS.circle) : STATUSES.win.replace('%name%', CHARACTERS.cross)
+    stateMessageElement.innerHTML = message
   } else {
     toggleTurn(context)
     context.isCircleTurn = !context.isCircleTurn
@@ -94,8 +95,8 @@ function onClickCell(e) {
   // draw
   context.handCount++
   if (context.handCount === 9) {
-    count.progress = faulse
-    stateMessageElement.innerHTML = STATES.draw
+    context.progress = false
+    stateMessageElement.innerHTML = STATUSES.draw
   }
 }
 
