@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/version-1/js-tic-tac-toe#readme",
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^9.0.0"
   },
   "dependencies": {
     "ajv": "^6.12.0",
@@ -105,7 +105,7 @@
     "load-json-file": "^1.1.0",
     "map-obj": "^1.0.1",
     "lru-cache": "^4.1.5",
-    "meow": "^3.7.0",
+    "meow": "^13.2.0",
     "mime-db": "^1.43.0",
     "mime-types": "^2.1.26",
     "mkdirp": "^0.5.1",
@@ -170,7 +170,7 @@
     "supports-color": "^2.0.0",
     "tar": "^2.2.2",
     "tough-cookie": "^2.5.0",
-    "trim-newlines": "^1.0.0",
+    "trim-newlines": "^5.0.0",
     "true-case-path": "^1.0.3",
     "tunnel-agent": "^0.6.0",
     "tweetnacl": "^0.14.5",
